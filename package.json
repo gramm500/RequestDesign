@@ -1,7 +1,7 @@
 {
-  "name": "webpacktemplate",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "My template + pug",
+  "description": "Request design",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
@@ -11,24 +11,11 @@
     "> 1%",
     "last 3 version"
   ],
-  "author": "https://github.com/vedees",
+  "author": "https://github.com/gramm500",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vedees/webpack-template-pug.git"
+    "url": "git+https://github.com/gramm500/RequestDesign"
   },
-  "bugs": {
-    "url": "https://github.com/vedees/webpack-template-pug/issues"
-  },
-  "keywords": [
-    "webpack",
-    "webpack4",
-    "merge",
-    "bable",
-    "bable7",
-    "scss",
-    "pug",
-    "vue"
-  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -42,7 +29,7 @@
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
@@ -54,7 +41,7 @@
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.9.0",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {

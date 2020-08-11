@@ -1,0 +1,55 @@
+header(class="page__header")
+	.header__top
+		.page__inner
+			.header__row
+				ul(class="header__row_item")
+					each val in ["Компания", "Портфолио", "Проектирование"]
+						li
+							a(class="link") #{val}
+				ul(class="header__row_item")
+					each val in ["Ресторанам", "Застройщикам", "Гос.заказчикам", "Таблет-питание"]
+						li
+							a(class="link") #{val}
+				ul(class="header__row_item")
+					each val in ["Сервис", "Контакты"]
+						li
+							a(class="link") #{val}
+				.header__row_item 
+					.header__row_item_info_holder
+						img(src="../assets/img/email-icon.png")
+						a(href="#") info@stolovay.ru
+					.header__row_item_info_holder
+						img(src="../assets/img/telephone.png")
+						a(href="#") 8 495 790-72-05
+						
+					
+	.header__middle
+		.page__inner
+			.header__middle_row
+				.header__middle_row_item
+					.header__logo
+						a(href="#")
+							img(src="../assets/img/fork-and-knife.png") 
+							span Столовая.РУ
+				.header__middle_row_item
+					.header__search
+						ul
+							li все
+						form(action="/", method="post")
+							input(type="text")
+							button(type="submit")
+								img(src="../assets/img/loop-img.png", alt="")
+				.header__middle_row_item
+					.header__controls
+						.header__controls_portal
+							img(src="../assets/img/portal.png", alt="")
+							span Мы на портале поставщиков
+						.header__controls_cart
+							img(src="../assets/img/cart.png", alt="")
+							span сумма 
+							strong 150 000 руб.
+
+			
+	.header__bottom
+		.page__inner
+			.header__bottom__row

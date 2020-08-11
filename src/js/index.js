@@ -1,2 +1,6 @@
-// Main js file
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
+export const WINDOW = {
+    size: {
+        width: window.outerWidth,
+        height: window.outerHeight 
+    }
+}

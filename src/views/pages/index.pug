@@ -1,0 +1,40 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Reques Design Test';
+
+block content
+	.page__inner
+		.homepage__main
+			.homepage__main_menu
+				.homepage__main_menu__title Целевые предложения
+				
+				ul(class="homepage__main_menu__list")
+					each val in ["Кафе, барам, ресторанам", "Детским садам и школам", "Таблет-питание","Для столовых", "Для пищеблоков", "Государственным заказам", "Для магазинов", "Для восйковых частей", "Все предложения" ]
+						li
+							a(class="link") #{val}
+			.homepage__main_menu__slider тут буде слидер
+			.homepage__main_menu__sales самые низкие цены распродажа каталог распродаж
+			.homepage__main_menu__brands
+				ul(class="homepage__main_menu__brands__list")
+					each val in ["../assets/img/brands/abat@2x.png", "../assets/img/brands/atesy@2x.png", "../assets/img/brands/hicold@2x.png","../assets/img/brands/rational@2x.png", "../assets/img/brands/simeco@2x.png"]
+						li
+							img(class="img", src=val)  
+					li 
+						span Все бренды
+		.homepage__news
+			.homepage__news_col
+
+			.homepage__news_col
+				.homepage__news_col__item
+				.homepage__news_col__item
+				.homepage__news_col__item
+		.homepage__recomendations
+			.homepage__recomendations_col
+			.homepage__recomendations_col
+				.homepage__recomendations_col__item
+				.homepage__recomendations_col__item
+		.homepage__about
+			.homepage__about_col
+				
+			.homepage__about_col
