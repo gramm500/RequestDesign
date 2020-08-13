@@ -42,14 +42,22 @@ header(class="page__header")
 				.header__middle_row_item
 					.header__controls
 						.header__controls_portal
-							img(src="../assets/img/portal.png", alt="")
-							span Мы на портале поставщиков
+							a
+								img(src="../assets/img/portal.png", alt="")
+								span Мы на портале поставщиков
 						.header__controls_cart
-							img(src="../assets/img/cart.png", alt="")
-							span сумма 
-							strong 150 000 руб.
+							a
+								img(src="../assets/img/cart.png", alt="")
+								span сумма 
+								strong 150 000 руб.
 
 			
 	.header__bottom
 		.page__inner
 			.header__bottom__row
+				ul
+					each val, key in {"Тепловое": "../assets/img/header-items/heating.png", "Холодильное" : "../assets/img/header-items/freezer.png", "Электромеханическое": "../assets/img/header-items/el-mechanical.png", "Хлебопекарное": "../assets/img/header-items/baking.png",	"Линии раздачи": "../assets/img/header-items/distrib-line.png", "Нейтральное": "../assets/img/header-items/neutral.png", "Для фаст фуда": "../assets/img/header-items/fast-food.png", "Для залов": "../assets/img/header-items/chairs.png",	"Вспомогательное": "../assets/img/header-items/additional.png", "Для магазинов": "../assets/img/header-items/for-shops.png"}
+						li
+							a(class="link") #{key}
+								img(src=val, alt="alt")
+						

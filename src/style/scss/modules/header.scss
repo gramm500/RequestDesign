@@ -1,1 +1,112 @@
-// header style
+.page__header {
+    display: block;
+}
+.header {
+
+    &__top {
+        display: block;
+        background-color: $green-pantone;
+        color: $white;
+    }
+
+    &__row {
+        @include flexBlock();
+
+        &_item {
+            @include flexBlock();
+
+            & > li {
+                
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 5px;
+                }
+                
+            }
+            &_info_holder{
+                img {
+                    width: 20px;
+                    height: 13px;
+                }
+            }
+        }
+    }
+    &__middle {
+        display: block;
+        background-color: $platinum;
+        color: $eerie-black;
+        &_row{
+            @include flexBlock();
+
+            &_item {
+                @include flexBlock();
+
+                
+            }
+        }
+    }
+    &__logo {
+        a{
+         img {
+             width: 40px;
+             height: 40px;
+         }
+        } 
+         
+     }
+    &__controls {
+        @include flexBlock();
+        &_portal {
+            a{
+                img {
+                    height: 35px;
+                    width: 35px;
+                }
+            }
+        }
+        &_cart {
+            a {
+                img {
+                    width: 29px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+    &__search {
+        form{
+            button{
+                width: 49px;
+                height: 35px;
+                padding: 7px 14px;
+                background-color: $bright-yellow-crayola;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                
+            }
+        }
+    }
+    &__bottom {
+        display: block;
+        &__row {
+            @include flexBlock();
+            ul {
+                @include flexBlock();
+                li {
+                    a{
+                        @include flexBlock(flex, column-reverse);
+                        img{
+                            width: 57px;
+                            height: 57px;
+                        }
+                    }
+                   
+                }
+            }
+        }
+    }
+}

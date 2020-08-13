@@ -1,4 +1,18 @@
-mixin item(title, descr)
-  .item
-    h2.item-title= title
-    p.item-descr= descr
+mixin news_item(url, alt, tag, date, title, body)
+  img(src=url, alt=alt, class="img-wrapper")
+  .news__tag #{tag}
+  .news__date #{date}
+  .news__title #{title}
+  .news__body #{body}
+
+mixin recomendations_text(brand, title, body, url)
+  .recomendations__brand #{brand}
+  .recomendations__tittle #{title}
+  .recomendations__body #{body}
+  div(class="img-wrapper") 
+    img(src=url, alt=url)
+
+mixin footer_col(title, list)
+  .footer_title #{title}
+  each val in list
+    a(href='#') #{val}

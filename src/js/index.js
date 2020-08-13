@@ -1,6 +1,5 @@
-export const WINDOW = {
-    size: {
-        width: window.outerWidth,
-        height: window.outerHeight 
-    }
-}
+import SwiperModule from "./modules/swiper";
+
+jQuery(document).ready(function() {
+	SwiperModule.init();
+});

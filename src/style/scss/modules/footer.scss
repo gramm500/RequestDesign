@@ -1,1 +1,10 @@
 // footer style
+.page__footer{
+    .footer__bottom {
+        &_row{
+            .img-wrapper{
+                max-width: 40px;
+            }
+        }
+    }
+}

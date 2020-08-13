@@ -5,13 +5,11 @@
 @import "utils/reset";
 
 html {
+  height: 100%;
   line-height: $mainLineHeight;
 	font-size: $mainFontSize;
 	color: $mainFontColor;
-  height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
-  }
+  
   @media screen and (max-width: $tableWidth) {
 		font-size: 15px;
   }
@@ -42,8 +40,22 @@ ul, li {
   padding: 0;
   list-style-type: none;
 }
+img {
+  display: block;
+  width: 100%;
+}
+.img {
+  display: block;
+  width: 100%;
+  &__wrapper {
+    display: block;
+  width: 100%;
+  }
+}
 
 .page {
+  width: 100%;
+  min-height: 100vh;
 
   &__inner {
     width: 100%;
@@ -53,36 +65,6 @@ ul, li {
   }
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-  max-width: $desktopWidth;
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: tableWidth;
-  }
-  @media screen and (max-width: $tableWidth) {
-    max-width: phoneWidth;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    max-width: smPhoneWidth;
-  }
-}
-
-header {
-  display: block;
- }
+@import "./modules/header.scss";
+@import "./modules/home.scss";
+@import "./modules/footer.scss";
