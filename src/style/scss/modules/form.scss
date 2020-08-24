@@ -1,0 +1,73 @@
+.form {
+	width: 100%;
+
+	&__name {
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	&__row {
+		@include flexBlock;
+
+		&_w100 {
+			.form__holder {
+				width: 100%;
+			}
+		}
+
+		&_w50 {
+			.form__holder {
+				width: 50%;
+			}
+		}
+
+		&_w33 {
+			.form__holder {
+				width: 33%;
+			}
+		}
+
+		&_column {
+			flex-direction: column;
+		}
+	}
+
+	&__holder {
+		width: 100%;
+		position: relative;
+	}
+
+	&__label {
+		cursor: pointer;
+
+		&_text {
+
+		}
+	}
+
+	&__item {
+		width: 100%;
+		padding: 10px 13px;
+
+
+		&_text {
+
+		}
+
+		&_textarea {
+
+		}
+
+		&_checkbox {
+
+		}
+
+		&_radio {
+
+		}
+
+		&_select {
+
+		}
+	}
+}

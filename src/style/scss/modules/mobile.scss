@@ -1,0 +1,78 @@
+.header {
+	&__mobile {
+		@include flexBlock(flex, row, center, flex-start);
+
+		&__logo {
+			@include flexBlock();
+			margin-left: 30px;
+
+			.img {
+				max-width: 55px;
+				margin-right: 10px;
+			}
+
+			& > div {
+				& > p {
+					font-size: 30px;
+					font-family: 'MyriadPro_Regular', sans-serif;
+				}
+
+				& > span {
+					font-size: 18px;
+					font-family: 'MyriadPro_Regular', sans-serif;
+					color: $sonic-silver;
+				}
+			}
+		}
+
+		&__content {
+			@include flexBlock(flex, row, center, flex-end);
+			margin-left: auto;
+
+			.link {
+				display: inline-block;
+				max-width: 45px;
+
+				&:not(:last-child) {
+					margin-right: 45px;
+				}
+
+				&:last-child {
+					span {
+						display: inline-block;
+						margin-left: 15px;
+						font-size: 25px;
+						font-family: 'MyriadPro_Regular', sans-serif;
+						color: $bright-yellow-crayola;
+					}
+
+					.img {
+						margin-top: -5px;
+					}
+				}
+			}
+
+			.img {
+				max-width: 55px;
+			}
+		}
+	}
+
+	&__equipment {
+		a {
+			@media screen and (max-width: 1000px) {
+				position: relative;
+				&:after {
+					position: absolute;
+					content: ">";
+					top: 50%;
+					right: 20px;
+					font-size: 30px;
+					margin-top: -15px;
+					color: #777777;
+				}
+			}
+
+		}
+	}
+}

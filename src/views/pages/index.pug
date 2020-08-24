@@ -1,124 +1,123 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Reques Design Test';
+    - var title = 'Reques Design Test';
 
 block content
-	.page__inner
-		.homepage__main
-			.homepage__main_menu
-				.homepage__main_menu__title Целевые предложения
-				
-				ul(class="homepage__main_menu__list")
-					each val in ["Кафе, барам, ресторанам", "Детским садам и школам", "Таблет-питание","Для столовых", "Для пищеблоков", "Государственным заказам", "Для магазинов", "Для восйковых частей", "Все предложения" ]
-						li
-							a(class="link") #{val}
-			.homepage__main_slider
-				div(class="swiper-container")
-					div(class="slider__text swiper-wrapper")
-						div(class="swiper-slide")
-								p портфолио
-								.big_text НИИ скорой помощи им. Н.В. Склифосовского
-								span Оборудование пищеблоков
-								button Подробнее 
-								div(class="img-wrapper")
-									img(src="../assets/img/brands/freezer-img.png")
-						div(class="swiper-slide")
-								p портфолио
-								.big_text НИИ скорой помощи им. Н.В. Склифосовского
-								span Оборудование пищеблоков
-								button Подробнее 
-								div(class="img-wrapper")
-									img(src="../assets/img/brands/freezer-img.png")
-			.homepage__main_sales
-				.sales__text
-					p Cамые низкие цены
-					.big_text распродажа 
-					a(class="link") Каталог распродаж
-			.homepage__main_brands
-				ul(class="homepage__main_brands__list")
-					each val in ["../assets/img/brands/abat@2x.png", "../assets/img/brands/atesy@2x.png", "../assets/img/brands/hicold@2x.png","../assets/img/brands/rational@2x.png", "../assets/img/brands/simeco@2x.png"]
-						li
-							img(class="img", src=val)  
-					li 
-						span Все бренды
-		
-		.homepage__news
-			.homepage__news_col_1
-				.homepage__news_col_1__content
-					.news__big_text Новости производителей
-					+news_item(
-						'../assets/img/news-block/square537.png', 
-						'News 1', 
-						'Abat',
-						'22.06.17',
-						'Новый разборный ротационный шкаф РПШ-18-8-6МР',
-						'Новый разборный ротационный пекарский шкаф РПШ-18-8-6МР: в комплекте тележка-шпилька ТШГ-18 на 18 уровней 600х800 мм вместимость тележки-шпильки – 135 хлебных форм №7 инжекционный тип парообразования разборная конструкция увеличенное стекло двери. Память на 110 программ(до 4-ех этапов в каждой программе) USB-порт. Таймер до 10ч Регулировка влажности от 0 до 100%. 5 скоро'
-					)
-					button(class="btn") Все новости
+    .page__inner
+        .homepage-main
+            div(class="homepage-main__menu hide-mobile_1000")
+                .homepage-main__menu__title Целевые предложения
 
-			.homepage__news_col_2
-				.homepage__news_col_2__item
-					.homepage__news_col_2__content
-						+news_item(
-							'../assets/img/news-block/square548.png', 
-							'News 2', 
-							'Abat',
-							'22.06.17',
-							'Повышение энергоэффективности туннельных посудомоечных машин МПТ торговой марки Abat',
-							'С целью снижения нагрузки на электрическую сеть и для повышения энергоэффективности изделий с 1 июня 2017 года был изменён алгоритм работы туннельных посудомоечных машин МПТ торговой марки Abat всех моделей...'
-						)
+                ul(class="homepage-main__menu__list")
+                    each val in ["Кафе, барам, ресторанам", "Детским садам и школам", "Таблет-питание","Для столовых", "Для пищеблоков", "Государственным заказам", "Для магазинов", "Для восйковых частей", "Все предложения" ]
+                        li
+                            a(class="link") #{val}
+            .homepage-main__slider
+                div(class="swiper-container")
+                    div(class="slider__text swiper-wrapper")
+                        div(class="swiper-slide")
+                            .swiper-slide__item
+                                +slider_item
+                        div(class="swiper-slide")
+                            .swiper-slide__item
+                                +slider_item
+                        div(class="swiper-slide")
+                            .swiper-slide__item
+                                +slider_item
+                        div(class="swiper-slide")
+                            .swiper-slide__item
+                                +slider_item
+                    div(class="swiper-pagination")
+                    div(class="swiper-navigation show-mobile_1000")
+                        div.swiper-button-prev
+                        div.swiper-button-next
+            .homepage-main__sales
+                .homepage-main__sales__img
+                    img(src="../assets/img/brands/giftbox@2x.png", alt="gift", class="img")
+                .homepage-main__sales__text
+                    p Самые низкие цены
+                    .big_text Распродажа
+                    a(class="link") Каталог распродаж
+            .homepage-main__brands
+                ul(class="homepage-main__brands__list")
+                    each val in ["../assets/img/brands/abat@2x.png", "../assets/img/brands/atesy@2x.png", "../assets/img/brands/hicold@2x.png","../assets/img/brands/rational@2x.png", "../assets/img/brands/simeco@2x.png"]
+                        li
+                            img(class="img", src=val)
+                    li
+                        a(href="#", class="link link_change_yellow") Все бренды
 
-				.homepage__news_col_2__item
-					.homepage__news_col_2__content
-						+news_item(
-							'../assets/img/news-block/square549.png', 
-							'News 3', 
-							'Abat',
-							'22.06.17',
-							'Повышение энергоэффективности туннельных посудомоечных машин МПТ торговой марки Abat',
-							'С целью снижения нагрузки на электрическую сеть и для повышения энергоэффективности изделий с 1 июня 2017 года был изменён алгоритм работы туннельных посудомоечных машин МПТ торговой марки Abat всех моделей...'
-						)
-				.homepage__news_col_2__item
-					.homepage__news_col_2__content
-						+news_item(
-							'../assets/img/news-block/square548.png', 
-							'News 4', 
-							'Abat',
-							'22.06.17',
-							'Повышение энергоэффективности туннельных посудомоечных машин МПТ торговой марки Abat',
-							'С целью снижения нагрузки на электрическую сеть и для повышения энергоэффективности изделий с 1 июня 2017 года был изменён алгоритм работы туннельных посудомоечных машин МПТ торговой марки Abat всех моделей...'
-						)
+        div(class="homepage-news hide-mobile_1000")
+            div(class="homepage-news__text big_text") Новости производителей
+            .homepage-news__inner
+                .homepage-news__col-1
+                    .homepage-news__col-1__content
+                        +news_item(
+                            '../assets/img/news-block/square537.png',
+                            'News 1',
+                            'Abat',
+                            '22.06.17',
+                            'Новый разборный ротационный шкаф РПШ-18-8-6МР',
+                            'Новый разборный ротационный пекарский шкаф РПШ-18-8-6МР: в комплекте тележка-шпилька ТШГ-18 на 18 уровней 600х800 мм вместимость тележки-шпильки – 135 хлебных форм №7 инжекционный тип парообразования разборная конструкция увеличенное стекло двери. Память на 110 программ(до 4-ех этапов в каждой программе) USB-порт. Таймер до 10ч Регулировка влажности от 0 до 100%. 5 скоро'
+                        )
+                    button(class="btn btn_border-black") Все новости
 
-		.homepage__recomendations
-			.big_text Рекомендуем
-			.small_text В этих разделах вы можете получить подробную информацию о пищевом оборудовании для столовых, ресторанов и кафе ведущих производителей.
-			.homepage__recomendations__holder
-				.homepage__recomendations_col
-					.homepage__recomendations_col__item
-						+recomendations_text("rational", "Пароконвектоматы", "Педантичность и преданность своему делу делает продукцию Rational идеальной для тех, кто ищет надежность и долговечность.", "../assets/img/recomendations/combi-steamer.png" )
-				.homepage__recomendations_col
-					.homepage__recomendations_col__item
-						+recomendations_text("Abat", "Тепловое оборудование", "Более 55 лет успешно работает на рынке торгово-технологического оборудования, по праву занимая лидирующее положение в данном сегменте.", "../assets/img/recomendations/heating-devices.png")
+                .homepage-news__col-2
+                    .homepage-news__col-2__item
+                        .homepage-news__col-2__content
+                            +news_item(
+                                '../assets/img/news-block/square548.png',
+                                'News 2',
+                                'Abat',
+                                '22.06.17',
+                                'Повышение энергоэффективности туннельных посудомоечных машин МПТ торговой марки Abat',
+                                'С целью снижения нагрузки на электрическую сеть и для повышения энергоэффективности изделий с 1 июня 2017 года был изменён алгоритм работы туннельных посудомоечных машин МПТ торговой марки Abat всех моделей...'
+                            )
 
-					.homepage__recomendations_col__item
-						+recomendations_text("hicold", "Холодильные столы", "Многофункциональность оборудования позволяет оптимизировать пространство на кухне, сделать работу персонала максимально удобной и эффективной.","../assets/img/recomendations/freezer-deck.png")
-		
-		.homepage__about
-			.homepage__about_col
-				.homepage__about_col_item
-					.big_text Комплексные решения оснащения столовых и кафе
-					p Компания предлагает комплексное оснащение столовых, ресторанов, кафе и баров в Москве. Наши услуги построены по принципу полного цикла обслуживания предприятий общепита и бизнеса HoReCa. Иными словами, мы предлагаем проектирование «под ключ» и постгарантийное обслуживание. География работы компании охватывает всю страну. При этом в каждом регионе мы готовы предложить демократичные цены на профессиональное технологическое оборудование для столовой и оптимальные решения с точки зрения эффективности бизнеса, приемлемым уровнем производительности в условиях ограниченного бюджета.
-				.homepage__about_col_item
-					.big_text Что мы предлагаем
-					p разработку технологического проекта кухни и производственной линии, дизайна ресторанного интерьера; составление меню согласно концепции и оснащения бара (кафе, столовой); подбор посуды, текстиля под общий стиль; профессиональное оборудование для кафе, бара и ресторана, большой выбор современных моделей; доставку в любой регион РФ; монтажные и пуско-наладочные работы; автоматизацию производственного процесса, что позволяет определённое оборудование для бара;
+                    .homepage-news__col-2__item
+                        .homepage-news__col-2__content
+                            +news_item(
+                                '../assets/img/news-block/square549.png',
+                                'News 3',
+                                'Abat',
+                                '22.06.17',
+                                'Повышение энергоэффективности туннельных посудомоечных машин МПТ торговой марки Abat',
+                                'С целью снижения нагрузки на электрическую сеть и для повышения энергоэффективности изделий с 1 июня 2017 года был изменён алгоритм работы туннельных посудомоечных машин МПТ торговой марки Abat всех моделей...'
+                            )
+                    .homepage-news__col-2__item
+                        .homepage-news__col-2__content
+                            +news_item(
+                                '../assets/img/news-block/square548.png',
+                                'News 4',
+                                'Abat',
+                                '22.06.17',
+                                'Повышение энергоэффективности туннельных посудомоечных машин МПТ торговой марки Abat',
+                                'С целью снижения нагрузки на электрическую сеть и для повышения энергоэффективности изделий с 1 июня 2017 года был изменён алгоритм работы туннельных посудомоечных машин МПТ торговой марки Abat всех моделей...'
+                            )
 
-			.homepage__about_col
-				img(src="../assets/img/fork-and-knife.png", alt="knife-and-fork", class="img-wrapper")
-				.big_text Столовая.РУ
-				.homepage__about_faint_text создание оптимальных пищеблоков
-				.homepage__about_head_text Группа компаний
-				.homepage__about_faint_text Показатели: 
-				p На рынке: 5 лет
-				p Объём контрактов: 4млрд.р
-				p Количество контрактов: 620
+        .homepage-recomendations
+            .big_text Рекомендуем
+            .small_text В этих разделах вы можете получить подробную информацию о пищевом оборудовании для столовых, ресторанов и кафе ведущих производителей.
+            .homepage-recomendations__holder
+                +recomendations_text("rational", "Пароконвектоматы", "Педантичность и преданность своему делу",  "делает продукцию Rational", "идеальной для тех, кто ищет", "надежность и долговечность.", "../assets/img/recomendations/combi-steamer.png" )
+                +recomendations_text("Abat", "Тепловое оборудование", "Более 55 лет успешно работает на рынке", "торгово-технологического оборудования, по праву", "занимая лидирующее положение в данном сегменте.", "" , "../assets/img/recomendations/heating-devices.png")
+                +recomendations_text("hicold", "Холодильные столы", "Многофункциональность оборудования позволяет", "оптимизировать пространство на кухне, сделать", "работу персонала максимально удобной и ","эффективной.","../assets/img/recomendations/freezer-deck.png")
+
+        .homepage-about
+            .homepage-about__col
+                .homepage-about__col__item
+                    .big_text Комплексные решения оснащения столовых и кафе
+                    p Компания предлагает комплексное оснащение столовых, ресторанов, кафе и баров в Москве. Наши услуги построены по принципу полного цикла обслуживания предприятий общепита и бизнеса HoReCa. Иными словами, мы предлагаем проектирование «под ключ» и постгарантийное обслуживание. География работы компании охватывает всю страну. При этом в каждом регионе мы готовы предложить демократичные цены на профессиональное технологическое оборудование для столовой и оптимальные решения с точки зрения эффективности бизнеса, приемлемым уровнем производительности в условиях ограниченного бюджета.
+                div(class="homepage-about__col__item hide-mobile_1000")
+                    .big_text Что мы предлагаем
+                    p разработку технологического проекта кухни и производственной линии, дизайна ресторанного интерьера; составление меню согласно концепции и оснащения бара (кафе, столовой); подбор посуды, текстиля под общий стиль; профессиональное оборудование для кафе, бара и ресторана, большой выбор современных моделей; доставку в любой регион РФ; монтажные и пуско-наладочные работы; автоматизацию производственного процесса, что позволяет определённое оборудование для бара;
+                button(class="btn btn_about") +
+            .homepage-about__col
+                img(src="../assets/img/fork-and-knife.png", alt="knife-and-fork", class="img-wrapper")
+                .big_text Столовая.РУ
+                .homepage-about__faint_text создание оптимальных пищеблоков
+                .homepage-about__head_text Группа компаний
+                .homepage-about__faint_text Показатели:
+                p На рынке: 5 лет
+                p Объём контрактов: 4млрд.р
+                p Количество контрактов: 620

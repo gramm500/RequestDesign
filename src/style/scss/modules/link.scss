@@ -1,0 +1,41 @@
+.link {
+	position: relative;
+	text-decoration: none;
+	color: $mainFontColor;
+	transition: all .3s $t;
+
+	&_opacity {
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&_change_yellow {
+		&:hover {
+			color: $bright-yellow-crayola;
+		}
+	}
+
+	&_border-bottom {
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: $mainFontColor;
+			transform: translateY(5px);
+			opacity: 0;
+			transition: .3s transform $t;
+		}
+
+		&:hover {
+			&:after {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}

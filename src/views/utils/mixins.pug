@@ -1,18 +1,42 @@
 mixin news_item(url, alt, tag, date, title, body)
-  img(src=url, alt=alt, class="img-wrapper")
-  .news__tag #{tag}
-  .news__date #{date}
-  .news__title #{title}
-  .news__body #{body}
+    .img__wrapper
+        img(src=url, alt=alt, class="img")
+    .news__wrapper
+        .news-content__inner
+            .news__tag #{tag}
+            .news__date #{date}
+        .news__title #{title}
+        .news__body #{body}
 
-mixin recomendations_text(brand, title, body, url)
-  .recomendations__brand #{brand}
-  .recomendations__tittle #{title}
-  .recomendations__body #{body}
-  div(class="img-wrapper") 
-    img(src=url, alt=url)
+mixin recomendations_text(brand, title, body, body2, body3, body4,url)
+    .homepage-recomendations__holder__item
+        .homepage-recomendations__holder__item__text
+            .recomendations__brand #{brand}
+            .recomendations__tittle #{title}
+            .recomendations__body #{body}
+            .recomendations__body #{body2}
+            .recomendations__body #{body3}
+            .recomendations__body #{body4}
+        .img-wrapper
+            img(src=url, alt=url)
 
 mixin footer_col(title, list)
-  .footer_title #{title}
-  each val in list
-    a(href='#') #{val}
+    .footer_title #{title}
+    each val in list
+        a(href='#') #{val}
+
+mixin slider_item(title="портфолио", head_text= "НИИ скорой помощи им. Н.В. Склифосовского" , bottom_text= "Оборудование пищеблоков", button_text= "Подробнее", url= "../assets/img/brands/freezer-img.png" )
+    div(class="swiper-slide__item__content")
+        p #{title}
+        .big_text #{head_text}
+        span  #{bottom_text}
+        button(class="btn btn_yellow btn_slide-white")  #{button_text}
+    div(class="img-wrapper swiper-slide__item__content")
+        img(src= url, class="img")
+mixin accordion_mobile(title, list)
+    li
+        span +
+        a(class="toggle", href="#") #{title}
+        ul(class="inner", style="display:none")
+            each val in list
+                li #{val}

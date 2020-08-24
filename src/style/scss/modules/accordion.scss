@@ -1,0 +1,40 @@
+ul.accordion {
+	padding-top: 83px;
+
+	.inner {
+		padding-left: 1em;
+		overflow: hidden;
+		display: none;
+	}
+
+	li {
+		position: relative;
+		margin: .5em 0;
+		color: $white;
+
+		a {
+
+		}
+
+		a.toggle {
+
+			width: 100%;
+			display: block;
+			color: $white;
+			padding: .75em;
+			border-radius: 0.15em;
+			transition: background .3s ease;
+
+			&:not(:last-child) {
+				border-bottom: 1px $sonic-silver solid;
+			}
+		}
+
+		span {
+			position: absolute;
+			color: $white;
+			top: 10px;
+			left: 95%;
+		}
+	}
+}

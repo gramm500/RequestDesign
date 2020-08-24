@@ -1,10 +1,82 @@
 // footer style
-.page__footer{
-    .footer__bottom {
-        &_row{
-            .img-wrapper{
-                max-width: 40px;
-            }
-        }
-    }
+.page-footer {
+
+	background-color: $eerie-black;
+}
+
+.footer-top {
+	width: 100%;
+	margin-bottom: 5.25rem;
+
+	&__row {
+		@include flexBlock(flex, row, flex-start, space-between);
+
+		&__column {
+			padding-top: 5.8125rem;
+
+			&:first-child {
+				padding-left: 75px;
+			}
+
+			@include flexBlock(flex, column, flex-start, flex-start);
+
+			a {
+				color: $white;
+
+				&:not(:last-child) {
+					margin-bottom: 0.8125em;
+				}
+
+
+			}
+
+			.footer_title {
+				color: $sonic-silver;
+				margin-bottom: 2.3125rem;
+				font-size: 27px;
+			}
+
+			&:last-child {
+				a {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	width: 100%;
+	background-color: $footer-bottom-color;
+
+	&__row {
+		@include flexBlock(flex, row, center, flex-start);
+		padding: 64px 0 45px 0;
+
+		.img-wrapper {
+			max-width: 40px;
+			text-align: center;
+			margin-right: 16px;
+		}
+
+		p {
+			color: $white;
+			margin-left: auto;
+		}
+
+		.big_text, .footer_faint_text {
+			color: $white;
+		}
+
+		div {
+			display: flex;
+			align-items: flex-end;
+			width: 100%;
+			justify-content: space-between;
+
+			div {
+				@include flexBlock(flex, column, flex-start, flex-start)
+			}
+		}
+	}
 }

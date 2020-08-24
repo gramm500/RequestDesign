@@ -1,8 +1,7 @@
 // Font
-$mainFont: "Montserrat", Helvetica, Arial, sans-serif;
+$mainFont: "MyriadPro_Light", sans-serif;
 
 // Size
-$mainFontColor: #343434;
 $mainFontWeight: 400;
 $mainFontSize: 16px;
 $mainLineHeight: 1;
@@ -10,9 +9,11 @@ $mainLineHeight: 1;
 $tableWidth: 1000px;
 $phoneWidth: 520px;
 $smPhoneWidth: 320px;
-
+$responsiveBreakpoints: 1400, 1300, 1200, 1100, 1000, 860, 760, 540, 320;
 // Color
 
+$mainFontColor: #121212;
+$mainFontColor2: #343434;
 $cultured-bg-color: #f4f2f2;
 $green-pantone: #00aa4b;
 $platinum: #e8e7e7;
@@ -20,4 +21,10 @@ $white: #ffffff;
 $eerie-black: #232323;
 $sonic-silver: #787878;
 $bright-yellow-crayola: #ffaf2d;
+$light-gray: #eeeeee;
+$very-light-gray: #efeeee;
+$title-green: #00a94b;
+$footer-bottom-color: #191919;
+
+$t: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 

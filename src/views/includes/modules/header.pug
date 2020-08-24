@@ -1,63 +1,98 @@
 header(class="page__header")
-	.header__top
-		.page__inner
-			.header__row
-				ul(class="header__row_item")
-					each val in ["Компания", "Портфолио", "Проектирование"]
-						li
-							a(class="link") #{val}
-				ul(class="header__row_item")
-					each val in ["Ресторанам", "Застройщикам", "Гос.заказчикам", "Таблет-питание"]
-						li
-							a(class="link") #{val}
-				ul(class="header__row_item")
-					each val in ["Сервис", "Контакты"]
-						li
-							a(class="link") #{val}
-				.header__row_item 
-					.header__row_item_info_holder
-						img(src="../assets/img/email-icon.png")
-						a(href="#") info@stolovay.ru
-					.header__row_item_info_holder
-						img(src="../assets/img/telephone.png")
-						a(href="#") 8 495 790-72-05
-						
-					
-	.header__middle
-		.page__inner
-			.header__middle_row
-				.header__middle_row_item
-					.header__logo
-						a(href="#")
-							img(src="../assets/img/fork-and-knife.png") 
-							span Столовая.РУ
-				.header__middle_row_item
-					.header__search
-						ul
-							li все
-						form(action="/", method="post")
-							input(type="text")
-							button(type="submit")
-								img(src="../assets/img/loop-img.png", alt="")
-				.header__middle_row_item
-					.header__controls
-						.header__controls_portal
-							a
-								img(src="../assets/img/portal.png", alt="")
-								span Мы на портале поставщиков
-						.header__controls_cart
-							a
-								img(src="../assets/img/cart.png", alt="")
-								span сумма 
-								strong 150 000 руб.
+    div(class="header-top", id="header")
+        .page__inner
+            .header__mobile
+                div(class="header__burger show-mobile_1000")
+                    div(class="header__burger__icon")
+                        span(class="header__burger__line top")
+                        span(class="header__burger__line middle")
+                        span(class="header__burger__line bottom")
+                    .header__burger__menu
+                        ul(class="header__burger__menu__inner")
+                            each val in ["Компания", "Портфолио", "Проектирование", "Ресторанам", "Застройщикам", "Гос.заказчикам", "Таблет-питание"]
+                                li
+                                    a(class="link link_opacity") #{val}
 
-			
-	.header__bottom
-		.page__inner
-			.header__bottom__row
-				ul
-					each val, key in {"Тепловое": "../assets/img/header-items/heating.png", "Холодильное" : "../assets/img/header-items/freezer.png", "Электромеханическое": "../assets/img/header-items/el-mechanical.png", "Хлебопекарное": "../assets/img/header-items/baking.png",	"Линии раздачи": "../assets/img/header-items/distrib-line.png", "Нейтральное": "../assets/img/header-items/neutral.png", "Для фаст фуда": "../assets/img/header-items/fast-food.png", "Для залов": "../assets/img/header-items/chairs.png",	"Вспомогательное": "../assets/img/header-items/additional.png", "Для магазинов": "../assets/img/header-items/for-shops.png"}
-						li
-							a(class="link") #{key}
-								img(src=val, alt="alt")
-						
+                div(class="header__mobile__logo show-mobile_1000")
+                    img(src="../assets/img/fork-and-knife.png", class="img")
+                    div
+                        p Столовая.РУ
+                        span Создание пищеблоков
+
+                div(class="header__mobile__content show-mobile_1000")
+                    a(class="link", href="#")
+                        img(src="../assets/img/search.png", class="img", alt="search")
+                    a(class="link", href="#")
+                        img(src="../assets/img/phone.png", class="img", alt="phone")
+                    a(class="link", href="#")
+                        span 12
+                        img(src="../assets/img/online-shopping-cart@2x.png", class="img", alt="shopping-cart")
+
+            div(class="header-top__row hide-mobile_1000")
+                ul(class="header-top__row__item")
+                    each val in ["Компания", "Портфолио", "Проектирование"]
+                        li
+                            a(class="link link_opacity") #{val}
+                ul(class="header-top__row__item")
+                    each val in ["Ресторанам", "Застройщикам", "Гос.заказчикам", "Таблет-питание"]
+                        li
+                            a(class="link link_opacity") #{val}
+                ul(class="header-top__row__item")
+                    each val in ["Сервис", "Контакты"]
+                        li
+                            a(class="link link_opacity " ) #{val}
+                .header-top__row__item
+                    div(class="header-top__row__item__info-holder hide-mobile_1000")
+                        img(src="../assets/img/email-icon.png", alt="email", class="img")
+                        a(href="#", class="link hide-mobile_1300") info@stolovay.ru
+                    div(class="header-top__row__item__info-holder hide-mobile_1000")
+                        img(src="../assets/img/telephone.png", alt="phone", class="img")
+                        a(href="#",class="link hide-mobile_1300") 8 495 790-72-05
+
+
+
+    div(class="header-middle hide-mobile_1000")
+        .page__inner
+            .header-middle__row
+                .header-middle__row__item
+                    .header-middle__logo
+                        a(href="#",class="link")
+                            img(src="../assets/img/fork-and-knife.png",alt="fork-and-knife" class="img")
+                            span Столовая.РУ
+                .header-middle__row__item
+                    .header-middle__search
+                        select
+                            option Все
+                            option Не все
+                            option Никакие
+                        form(action="/", method="post", class="form")
+                            div(class="form__holder")
+                                input(type="text", class="form__item form__item_text")
+                            button(type="submit", class="btn")
+                                img(src="../assets/img/loop-img.png", alt="search-img", class="img")
+                .header-middle__row__item
+                    .header-middle__controls
+                        .header-middle__controls_portal
+                            a(class="link")
+                                img(src="../assets/img/portal.png", alt="portal", class="img")
+                                span Мы на портале поставщиков
+                        .header-middle__controls_cart
+                            a(class="link")
+                                img(src="../assets/img/cart.png", alt="cart", class="img")
+                                span 12
+                                div
+                                    span Сумма
+                                    strong 150 000 руб.
+
+
+    .header__bottom
+        .page__inner
+            .header__bottom__row
+                ul
+                    each val, key in {"Тепловое": "../assets/img/header-items/heating.png", "Холодильное" : "../assets/img/header-items/freezer.png", "Электромеханическое": "../assets/img/header-items/el-mechanical.png", "Хлебопекарное": "../assets/img/header-items/baking.png",    "Линии раздачи": "../assets/img/header-items/distrib-line.png", "Нейтральное": "../assets/img/header-items/neutral.png", "Для фаст фуда": "../assets/img/header-items/fast-food.png", "Для залов": "../assets/img/header-items/chairs.png",    "Вспомогательное": "../assets/img/header-items/additional.png", "Для магазинов": "../assets/img/header-items/for-shops.png"}
+                        li
+                            a(class="link") #{key}
+                                img(src=val, alt="alt", class="img")
+
+            div(class="header__equipment show-mobile_1000")
+                a(class="link", href="#") Оборудование

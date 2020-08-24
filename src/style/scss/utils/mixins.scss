@@ -1,36 +1,36 @@
 @function rem($pixels, $context: $mainFontSize) {
-  @if (unitless($pixels)) {
-	$pixels: $pixels * 1px;
-  }
-  @if (unitless($context)) {
-	$context: $context * 1px;
-  }
-  @return $pixels / $context * 1rem;
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+	@return $pixels / $context * 1rem;
 }
 
 @mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+	width: $width;
+	height: $height;
 }
 
 @mixin flexBlock($t: flex, $d: row, $ai: center, $jc: flex-start) {
-  display: $t;
-  flex-direction: $d;
-  align-items: $ai;
-  justify-content: $jc;
+	display: $t;
+	flex-direction: $d;
+	align-items: $ai;
+	justify-content: $jc;
 }
 
 @mixin placeholder {
-  ::-webkit-input-placeholder {
-	@content
-  }
-  :-moz-placeholder {
-	@content
-  }
-  ::-moz-placeholder {
-	@content
-  }
-  :-ms-input-placeholder {
-	@content
-  }
+	::-webkit-input-placeholder {
+		@content
+	}
+	:-moz-placeholder {
+		@content
+	}
+	::-moz-placeholder {
+		@content
+	}
+	:-ms-input-placeholder {
+		@content
+	}
 }

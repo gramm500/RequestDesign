@@ -1,70 +1,116 @@
+@import './plugins/nice-select.css';
 @import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
 
+@font-face {
+	font-family: 'MyriadPro_Regular';
+	src: url('/assets/fonts/MYRIADPRO-REGULAR.woff') format('woff'),
+	url('/assets/fonts/MYRIADPRO-REGULAR.ttf') format('truetype'),
+	url('/assets/fonts/MYRIADPRO-REGULAR.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'MyriadPro_Light';
+	src: url("/assets/fonts/MyriadPro-Light.woff") format("woff"),
+	url("/assets/fonts/MyriadPro-Light.ttf") format("truetype"),
+	url("/assets/fonts/MyriadPro-Light.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'MyriadPro_Bold';
+	src: url("/assets/fonts/MYRIADPRO-BOLD.woff") format("woff"),
+	url("/assets/fonts/MYRIADPRO-BOLD.ttf") format("truetype"),
+	url("/assets/fonts/MYRIADPRO-BOLD.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'MyriadPro_SBold';
+	src: url("/assets/fonts/MYRIADPRO-SEMIBOLD.woff") format("woff"),
+	url("/assets/fonts/MYRIADPRO-SEMIBOLD.ttf") format("truetype"),
+	url("/assets/fonts/MYRIADPRO-SEMIBOLD.otf") format("opentype");
+}
+
 html {
-  height: 100%;
-  line-height: $mainLineHeight;
+	height: 100%;
+	line-height: $mainLineHeight;
 	font-size: $mainFontSize;
 	color: $mainFontColor;
-  
-  @media screen and (max-width: $tableWidth) {
+
+	@media screen and (max-width: $tableWidth) {
 		font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
+	}
+	@media screen and (max-width: $phoneWidth) {
 		font-size: 14px;
-  }
+	}
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: $mainFont;
+	margin: 0;
+	padding: 0;
+	font-family: $mainFont;
 	font-size: $mainFontSize;
-  font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: $cultured-bg-color;
+	font-weight: $mainFontWeight;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $cultured-bg-color;
 }
 
-*, *:before, *:after { box-sizing: border-box; }
+*, *:before, *:after {
+	box-sizing: border-box;
+}
 
-h1, h2, h3, h4, h5, h6 { margin: 0; }
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
 
-a { text-decoration: none; }
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
 
 ul, li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
+
 img {
-  display: block;
-  width: 100%;
+	display: block;
+	width: 100%;
 }
+
 .img {
-  display: block;
-  width: 100%;
-  &__wrapper {
-    display: block;
-  width: 100%;
-  }
+	display: block;
+	width: 100%;
+
+	&__wrapper {
+		display: block;
+		width: 100%;
+	}
 }
 
 .page {
-  width: 100%;
-  min-height: 100vh;
+	width: 100%;
+	min-height: 100vh;
 
-  &__inner {
-    width: 100%;
-    max-width: 1590px;
-    padding: 0 20px;
-    margin: 0 auto;
-  }
+	&__inner {
+		width: 100%;
+		max-width: 1590px;
+		padding: 0 20px;
+		margin: 0 auto;
+	}
 }
 
-@import "./modules/header.scss";
-@import "./modules/home.scss";
-@import "./modules/footer.scss";
+@import "./modules/form";
+@import "./modules/link";
+@import "./modules/button";
+@import "./modules/header";
+@import "./modules/home";
+@import "./modules/footer";
+@import "modules/burger";
+@import "modules/mobile";
+@import "modules/accordion";
+@import "responsive";

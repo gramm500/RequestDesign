@@ -1,112 +1,240 @@
 .page__header {
-    display: block;
+	display: block;
 }
+
 .header {
 
-    &__top {
-        display: block;
-        background-color: $green-pantone;
-        color: $white;
-    }
+	&-top {
+		display: block;
+		color: $white;
+		background-color: $green-pantone;
 
-    &__row {
-        @include flexBlock();
+		&__row {
+			@include flexBlock();
+			padding: 0.6875rem 0;
 
-        &_item {
-            @include flexBlock();
+			&__item {
+				@include flexBlock();
+				padding: 1px 0;
 
-            & > li {
-                
-                &:not(:last-child) {
-                    margin-right: 40px;
-                }
+				&:nth-child(1), &:nth-child(2) {
+					padding-right: 0.9375rem;
+					margin-right: 0.9375rem;
+					border-right: 1px solid #40bf79;
+				}
 
-                a {
-                    display: inline-block;
-                    padding: 5px;
-                }
-                
-            }
-            &_info_holder{
-                img {
-                    width: 20px;
-                    height: 13px;
-                }
-            }
-        }
-    }
-    &__middle {
-        display: block;
-        background-color: $platinum;
-        color: $eerie-black;
-        &_row{
-            @include flexBlock();
+				&:last-child {
+					margin-left: auto;
+				}
 
-            &_item {
-                @include flexBlock();
+				& > li {
+					&:not(:last-child) {
+						margin-right: 2.375rem;
+					}
+				}
 
-                
-            }
-        }
-    }
-    &__logo {
-        a{
-         img {
-             width: 40px;
-             height: 40px;
-         }
-        } 
-         
-     }
-    &__controls {
-        @include flexBlock();
-        &_portal {
-            a{
-                img {
-                    height: 35px;
-                    width: 35px;
-                }
-            }
-        }
-        &_cart {
-            a {
-                img {
-                    width: 29px;
-                    height: 35px;
-                }
-            }
-        }
-    }
-    &__search {
-        form{
-            button{
-                width: 49px;
-                height: 35px;
-                padding: 7px 14px;
-                background-color: $bright-yellow-crayola;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
-                
-            }
-        }
-    }
-    &__bottom {
-        display: block;
-        &__row {
-            @include flexBlock();
-            ul {
-                @include flexBlock();
-                li {
-                    a{
-                        @include flexBlock(flex, column-reverse);
-                        img{
-                            width: 57px;
-                            height: 57px;
-                        }
-                    }
-                   
-                }
-            }
-        }
-    }
+				.link {
+					display: inline-block;
+					padding: 0.3125rem;
+					font-size: 0.875rem;
+					color: $white;
+					letter-spacing: 0.5px;
+				}
+
+				&__info-holder {
+					@include flexBlock();
+
+					.img {
+						max-width: 1.25rem;
+					}
+
+					&:last-child {
+						margin-left: 2.5rem;
+
+						.img {
+							max-width: 1rem;
+						}
+					}
+				}
+			}
+
+
+		}
+	}
+
+
+	&-middle {
+		display: block;
+		background-color: $platinum;
+		color: $eerie-black;
+
+		&__row {
+			@include flexBlock();
+			padding: 0.75rem 0;
+
+			&__item {
+				&:first-child {
+					margin-right: 90px;
+				}
+
+				&:nth-child(2) {
+					width: 57%;
+				}
+
+				&:last-child {
+					width: 19.6%;
+					margin-left: auto;
+				}
+
+			}
+		}
+
+		&__logo {
+			a {
+				@include flexBlock();
+
+				.img {
+					margin-right: 0.5rem;
+					max-width: 2.5rem;
+				}
+
+				span {
+					font-family: 'MyriadPro_Regular', sans-serif;
+					font-size: 2.0625rem;
+				}
+			}
+
+		}
+
+		&__search {
+			@include flexBlock();
+
+			.form {
+				button {
+					width: 3.0625rem;
+					height: 2.375rem;
+					padding: 0.4375rem 0.875rem;
+					background-color: $bright-yellow-crayola;
+					border-radius: 0 5px 5px 0;
+				}
+			}
+
+			.nice-select {
+				border-radius: 5px 0 0 5px;
+				border: 0;
+				border-right: 1px solid transparent;
+				height: 38px;
+				margin-right: 1px;
+
+				&:after {
+					margin-top: -2px;
+					width: 0;
+					height: 0;
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-top: 6px solid $eerie-black;
+					border-bottom: 0;
+					transform: rotate(0);
+					transform-origin: 0;
+				}
+			}
+		}
+
+		&__controls {
+			@include flexBlock;
+
+			&_portal {
+
+				a {
+					@include flexBlock;
+
+					.img {
+						max-width: 35px;
+						margin-right: 0.375rem;
+						transition: .3s filter $t;
+					}
+
+					&:hover {
+						.img {
+							filter: contrast(200%);
+						}
+					}
+				}
+
+			}
+
+			&_cart {
+				min-width: 130px;
+				max-width: 140px;
+				margin-left: auto;
+
+				a {
+					@include flexBlock(flex, row, flex-end, flex-end);
+					position: relative;
+
+					.img {
+						max-width: 1.5625rem;
+						margin-right: 1.5625rem;
+					}
+
+					& > span {
+						position: absolute;
+						top: 0;
+						font-size: 0.75rem;
+						left: 0.5rem;
+					}
+
+					& > div {
+						@include flexBlock(flex, column, flex-start, flex-start);
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
+
+
+	&__bottom {
+		display: block;
+		background-color: $white;
+		margin-bottom: 15px;
+		padding-bottom: 0.9375rem;
+		box-shadow: 0 20px 20px -30px $eerie-black;
+
+		&__row {
+			@include flexBlock();
+			width: 100%;
+
+			ul {
+				@include flexBlock(flex, row, flex-start, space-between);
+				width: 100%;
+
+				li {
+
+
+					a {
+						@include flexBlock(flex, column-reverse);
+
+						.img {
+							width: 3.5625rem;
+							height: 3.5625rem;
+							margin-bottom: 0.6875rem;
+							margin-top: 0.5625rem;
+						}
+					}
+
+				}
+			}
+		}
+
+		@media screen and (max-width: 1000px) {
+			ul {
+				display: none;
+			}
+		}
+	}
+}
+
+.form {
+	@include flexBlock();
 }
